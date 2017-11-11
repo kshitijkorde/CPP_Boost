@@ -5,11 +5,11 @@ using namespace std;
 using namespace boost::filesystem;
 
 void TraverseDirectory(path P, string DirName){
-	cout << "Parent:" << DirName << endl;
+	//cout << "Parent:" << DirName << endl;
 	for(directory_iterator itr(P); itr != directory_iterator(); ++itr){
 		if(is_directory(status(itr->path()))){
 			string childdir = DirName+"/"+itr->path().filename().string();
-			cout << "Dir:" << childdir << endl;
+			cout << "Directory:" << childdir << endl;
 			path ChildPath(childdir);
 			TraverseDirectory(ChildPath, childdir);
 		}else if(is_regular_file(status(itr->path()))){
