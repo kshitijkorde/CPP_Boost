@@ -6,7 +6,7 @@ LIBS= -I $(BOOST_HEADER_PATH)
 LIBS+= -L $(BOOST_LIBRARY_PATH) $(BOOST_LIBRARIES)
 
 binPath: Path.cpp
-	$(CXX) -o binPath Path.cpp $(LIBS) 
+	$(CXX) -o binPath Path.cpp $(LIBS) -Wall
 clean:
 	rm binPath
 
